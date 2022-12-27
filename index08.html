@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lógica de programação com JavaScript</title>
+    </head>
+
+    <body>
+        <h1>Lógica de programação com JavaScript</h1>
+
+        <script>
+            //Jogo de sortes
+    
+            var numero1, numero2, numeroSorteado;
+    
+            numero1 = parseInt (prompt ("Jogador 1 digite um número"));
+            numero2 = parseInt (prompt ("Jogador 2 digite um número"));
+    
+            if (numero1===numero2){
+                alert ("Números iguais. Empate!");
+            } else {
+                numeroSorteado = parseInt(Math.random() * 2);  //Para conseguir os valores 0 e 1
+                
+                if (numeroSorteado === 0){
+                    if (numero1<numero2){
+                        alert("Jogador 1 ganhou!");
+                    } else {
+                        alert("Jogador 2 ganhou!");
+                    }
+                } else {
+                    if (numero1>numero2){
+                        alert("Jogador 1 ganhou!");
+                    } else {
+                        alert("Jogador 2 ganhou!");
+                    }
+                }
+            }
+            
+        </script>
+    </body>
+</html>
