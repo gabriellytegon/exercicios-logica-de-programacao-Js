@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lógica de programação com JavaScript</title>
+    </head>
+
+    <body>
+        <h1>Lógica de programação com JavaScript</h1>
+
+        <button onclick="operacao('+')">+</button>
+        <button onclick="operacao('-')">-</button>
+        <button onclick="operacao('*')">*</button>
+        <button onclick="operacao('/')">/</button>
+        
+        <div id="output"></div>
+
+        <script>
+            //Mini calculadora 
+
+            var primeiroNumero, segundoNumero, total;
+            primeiroNumero = parseFloat(prompt('Digite um número para começar a operação.'));
+            total = primeiroNumero;
+            exibir();
+
+            function exibir (){
+                var output = document.querySelector ('#output');
+                output.innerHTML = total;
+            }
+
+            function operacao(operador){
+                segundoNumero = parseFloat(prompt('Digite o segundo número da operação.'));
+                
+                switch(operador){
+                    case '+': 
+                        total = primeiroNumero + segundoNumero;
+                        break;
+                    
+                    case '-':
+                        total = primeiroNumero - segundoNumero;
+                        break;
+                    
+                    case '*':
+                        total = primeiroNumero * segundoNumero;
+                        break;
+
+                    case '/':
+                        total = primeiroNumero / segundoNumero;
+                        break;
+                }
+                
+                exibir();
+                primeiroNumero = total;
+            }
+        </script>
+    </body>
