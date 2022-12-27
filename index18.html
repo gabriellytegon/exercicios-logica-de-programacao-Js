@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lógica de programação com JavaScript</title>
+    </head>
+
+    <body>
+        <h1>Lógica de programação com JavaScript</h1>
+        
+        <button onclick="calcularArea(largura, altura)">Calcular área</button>
+        <div id="output"></div>
+
+        <script>
+            //Calcular e exibir a área de um retângulo 
+
+            var largura, altura;
+
+            largura = parseFloat(prompt('Digite o valor do primeiro lado do retângulo'));
+            altura = parseFloat(prompt('Digite o valor do segundo lado do retângulo'));
+
+            function calcularArea( largura, altura){
+                    var area = largura * altura;
+                    var output = document.querySelector('#output');
+                    output.innerHTML = 'Area total: ' +area;
+            }
+
+        </script>
+    </body>
