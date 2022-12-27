@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lógica de programação com JavaScript</title>
+    </head>
+
+    <body>
+        <h1>Lógica de programação com JavaScript</h1>
+
+        <button onclick="iniciarCalculo('+')">+</button>
+        <button onclick="iniciarCalculo('-')">-</button>
+        <button onclick="iniciarCalculo('*')">*</button>
+        <button onclick="iniciarCalculo('/')">/</button>
+        
+        <div id="output"></div>
+
+        <script>
+            //Exercício calculadora refatorado. Trabalhando desacoplamento e respostas inválidas.
+
+            var primeiroNumero;
+            primeiroNumero = parseFloat(prompt('Digite um número para começar a operação.'));
+            exibir(primeiroNumero);
+
+            function exibir(total){
+                document.querySelector('#output').innerHTML = total;
+            }
+
+            function iniciarCalculo(operador){
+                var num1 = parseFloat(document.querySelector('#output').textContent);
+                var num2 = parseFloat(prompt('Digite o segundo número da operação.'));
+
+                try{
+                    var resultado = operacao(num1, num2, operador);
+                } catch(e){
+                    alert(e);
+                    return;
+                }
+
+                exibir(resultado);
+            }
+
+            function operacao(numero1, numero2, operacao){
+
+                if (operacao!=='+' && operacao!=='-' && operacao!=='*' && operacao!=='/'){
+                    throw new Error('Digite um símbolo válido.');
+                }
+
+                if (isNaN(numero1) || isNaN(numero2)){
+                    throw new Error('Digite um número válido.');
+                }
+
+                var total = null; 
+
+                switch(operacao){
+                    case '+': 
+                        total = numero1 + numero2;
+                        break;
+                    
+                    case '-':
+                        total = numero1 - numero2;
+                        break;
+                    
+                    case '*':
+                        total = numero1 * numero2;
+                        break;
+
+                    case '/':
+                        total = numero1 / numero2;
+                        break;
+                }
+
+                return total;
+            }
+        </script>
+    </body>
