@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lógica de programação com JavaScript</title>
+    </head>
+
+    <body>
+        <h1>Lógica de programação com JavaScript</h1>
+        
+        <script>
+            var nota1, nota2, media;
+    
+            nota1 = parseFloat (prompt ("Digite a primeira nota:"));
+            nota2 = parseFloat (prompt ("Digite a segunda nota:"));
+    
+            if (nota1===0 || nota2===0){
+                alert("Aluno reprovado!")
+            } else {
+                media = (nota1 + nota2)/2;
+    
+                if (media>=5){
+                alert("Aluno aprovado!")
+                } else {
+                    alert ("Aluno reprovado!")
+                }
+            }
+        </script>
+    </body>
+</html>
