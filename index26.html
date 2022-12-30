@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lógica de programação com JavaScript</title>
+    </head>
+
+    <body>
+        <h1>Lógica de programação com JavaScript</h1>
+        
+        <div id="output"></div>
+
+        <script>
+            var pessoas = [
+                {'nome': 'Ana', 'email': 'ana@abc.com'},
+                {'nome': 'Bianca', 'email': 'bianca@abc.com'}, 
+                {'nome': 'Lucas', 'email':  'lucas@abc.com'}
+            ];
+
+            var mensagem='';
+
+            for (var aux=0; aux<pessoas.length; aux++){
+                mensagem += pessoas[aux].nome + ' - ' + pessoas[aux].email + '<br>';
+            }
+
+            document.getElementById('output').innerHTML = mensagem;
+        </script>
+    </body>
