@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lógica de programação com JavaScript</title>
+    </head>
+
+    <body>
+        <h1>Lógica de programação com JavaScript</h1>
+        
+        <div id="output"></div>
+
+        <script>
+            var produtos = [
+                {'nome': 'caneta', 'preco': 2.50},
+                {'nome': 'planner', 'preco': 23.90}, 
+                {'nome': 'régua', 'preco': 5.50}
+            ];
+
+            var mensagem='';
+
+            for (var aux=0; aux<produtos.length; aux++){
+                mensagem += '<h3>Produto: ' + produtos[aux].nome + '<br></h3>';
+                mensagem += 'Preço: ' + produtos[aux].preco + '<br>';
+            }
+
+            document.getElementById('output').innerHTML = mensagem;
+        </script>
+    </body>
